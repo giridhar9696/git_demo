@@ -111,17 +111,17 @@
             <p>Your wellness journey starts here</p>
         </div>
         
-        <form>
+        <form onsubmit="handleLogin(event)">
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" required>
             </div>
-            
+
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" required>
             </div>
-            
+
             <button type="submit" class="login-btn">Login</button>
         </form>
         
@@ -130,5 +130,15 @@
             <a href="#">Sign Up</a>
         </div>
     </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            // Store login info in localStorage if needed
+            localStorage.setItem('userEmail', document.getElementById('email').value);
+            // Redirect to home page
+            window.location.href = 'home.html';
+        }
+    </script>
 </body>
 </html>
